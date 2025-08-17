@@ -40,7 +40,8 @@ The JPEN stack is a technology stack that combines the power of JSON, Python, Em
 ## Developers/Founders 👩‍💻👨‍💻
 - **Frontend Developer**: Souvik Kar
 - **UI/UX Developer**: Rajanya Chakraborty 
-- **Backend Developer/Lead Developer**: Krishnendu Mitra 
+- **Backend Developer/Lead Developer**: Krishnendu Mitra
+- **Integration & Testing Engineer**:Hritick Modak
 - **Machine Learning Specialist**: Saptarshi Pramanik 
 
 ## Why We Created This Project ❓
