@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Cavernous Hoax Scanner">
+    <meta property="og:image" content="../images/side-img.png" name="og:image">
+    <meta itemprop="image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="og:site_name" content="Cavernous Hoax Scanner">
+    <meta property="twitter:image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cavernous Hoax Scanner">
+    <meta content="Cavernous Hoax Scanner (CHS) is a cutting-edge deepfake image & video detection platform also feature image compresser, image converter, image to pdf to ensure AI-powered media processing." lang="en-us" name="description"/>
+    <meta content="Cavernous Hoax Scanner, Deepfake Detector, DFD, Image tool, deepfake, image editor, project, CNN, WHITE LOTUS" lang="en-us" name="keywords">
+    <meta name="google-site-verification" content="s30Z0opKABJMHsTOIT6f6iSoYSQel63Iln-BPe81Ov4" />
+    <title version="1.0">Cavernous Hoax Scanner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/App.css"/>
+    <link rel="icon" href="../public/favicon.ico"/>
+</head>
+<style>
+    .containers-option{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .view-image{
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
+        .view-image, .process-btn{
+            margin: 10px auto 0px auto;
+        }
+    }
+</style>
+<body onload="pdf.engine_start();">
+    <header id="header">
+        <%= header %>
+    </header>
+    <section class="workspace" id="pdfPage">
+        <img src="../images/3d_donut.png" alt="chs" class="right-top-des"/>
+        <h2>Image To PDF Converter</h2>
+        <div class="underline"></div>
+        <div class="containers">
+            <div class="drop-box">
+                <div class="placeholder"><i class="fa fa-file-image-o" style="font-size: 30px;"></i><br>Drag and drop an image(s), or click to select</div>
+                <div class="preview pdfPreview"></div>
+                <input type="file" id="file-input" accept="image/*" multiple="true" name="file-input" onchange="pdf.engine_active();">
+            </div>
+        </div>
+        <div class="progress-status">
+            <div class="progress">Please wait a little..</div>
+        </div>
+        <div class="containers-option" id="op1">
+             <div class="selecter">
+                <select class="form-control" id="layout-input" onchange="" name="layout-input">
+                    <option selected="true">Combine mode</option>
+                    <option>Landscap only</option>
+                    <option>Portrait only</option>
+                </select>
+            </div>
+            <div class="selecter">
+                <select class="form-control" id="size-input" onchange="" name="size-input">
+                    <option>A3 size</option>
+                    <option selected="true">A4 size</option>
+                    <option>A3 size</option>
+                    <option>Letter size</option>
+                    <option>Legal size</option>
+                    <option>B5 size</option>
+                    <option>B4 size</option>
+                </select>
+            </div>
+            <div class="view-image"></div>
+            <div class="process-btn">
+                <div class="btn btn-process" onclick="process();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+                        <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                    </svg>
+                    Process
+                </div>
+            </div>
+        </div>
+        <img src="../images/glow1.png" alt="chs" class="left-middle-des"/>
+        <img src="../images/3d_atom.png" alt="chs" class="right-middle-des"/>
+        <img src="../images/arrow_circle.png" alt="chs" class="left-bottom-des"/>
+        <div class="glass-status flx" id="op2">
+            <span class="head">Media Accepted:</span><span class="data" id="media-acc">No Media Found!</span>
+        </div>
+        <div class="glass-status" id="op3">
+            <div class="flx">
+                <span class="head">Media Type:</span><span class="data" id="media-type">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Size:</span><span class="data" id="media-size">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Count:</span><span class="data" id="media-count">Not Selected!</span>
+            </div>
+        </div>
+        <div class="htsi appear hide">
+            <h2>How to Use it.</h2>
+            <div class="underline"></div>
+            <div class="card-group flo">
+                <div class="card">
+                    <h4 class="card-title"><span>1</span> Drop your Images</h4>
+                    <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas excepturi facilis libero natus ipsam neque expedita soluta ipsum assumenda unde?</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title"><span>2</span> Media Get Permite</h4>
+                    <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas excepturi facilis libero natus ipsam neque expedita soluta ipsum assumenda unde?</p>
+                </div>
+            </div>
+            <div class="card-group flo">
+                <div class="card">
+                    <h4 class="card-title"><span>3</span> Hit The Process</h4>
+                    <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas excepturi facilis libero natus ipsam neque expedita soluta ipsum assumenda unde?</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title"><span>4</span> Download Report</h4>
+                    <p class="card-text text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas excepturi facilis libero natus ipsam neque expedita soluta ipsum assumenda unde?</p>
+                </div>
+            </div>
+        </div>
+        <div id="moreProduct" class="appear hide">
+            <%= services %>
+        </div>
+        <div id="customerFeed">
+            <%= feed %>
+        </div>
+        <div id="faq-help" class="appear hide">
+            <%= faq %>
+        </div>
+    </section>
+    <footer id="footer">
+        <%= footer %>
+    </footer>
+</body>
+<script src="../public/App.js"></script>
+<script src="../public/default.min.js"></script>
+<script>
+    pageSet.push('header','pdfPage','moreProduct','faq-help','footer');
+    appearSet.push(['.htsi',380], ['#moreProduct',580], ['#faq-help', 980]);
+    currentPage.push('imgToPdf');
+    document.getElementById('header').innerHTML = document.getElementById('header').textContent;
+    document.getElementById('footer').innerHTML = document.getElementById('footer').textContent;
+    document.getElementById('moreProduct').innerHTML = document.getElementById('moreProduct').textContent;
+    document.getElementById('faq-help').innerHTML = document.getElementById('faq-help').textContent;
+    document.getElementById('customerFeed').innerHTML = document.getElementById('customerFeed').textContent;
+    async function process(){
+        if(document.getElementById('media-acc').textContent === 'Accepted' && pdf.imgSet.length!=0){
+            let layout = document.getElementById('layout-input').value;
+            if(layout == 'Combine mode'){
+                layout = "combine";
+            }else if(layout == 'Landscap only'){
+                layout = "landscap";
+            }else if(layout == 'Portrait only'){
+                layout = 'portrait';
+            }
+            let size = document.getElementById('size-input').value;
+            szie = size.replace(' size','');
+            document.querySelector('.progress-status').style.display = 'block';
+            let progress = document.querySelector('.progress');
+            progress.textContent = "Image evaluate start...";
+            system.block_resource({input: "file-input", selector: ['layout-input', 'size-input']});
+            for(let i=0; i<pdf.imgSet.length; i++){
+                progress.textContent = "Image no "+(i+1)+" compressing..";
+                pdf.imgSet[i] = await compressBase64Image(pdf.imgSet[i]);
+                if(pdf.imgSet.length==i+1){
+                    sendToAPI(pdf, layout, size);
+                }
+            }
+            
+        }
+    }
+    function sendToAPI(pdf, layout, size){
+        let progress = document.querySelector('.progress');
+        const MultiPartsAPI = eval(config.hex.MultiPartsAPI);
+        progress.textContent = "All images sending to process..";
+        MultiPartsAPI('/load/multiple', pdf.imgSet, getMultiImageLimit(pdf.imgSet)).then((result) => {
+            progress.textContent = "Pdf file evaluate start.."
+            fetch('/imgToPdf/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    paper_size: size,
+                    layout: layout,
+                    total_no: pdf.imgSet.length,
+                    load: 'true'
+                })
+            }).then(response => response.json()).then(data => {
+                afterResponce(data);
+            });
+        }).catch((error) => {
+            console.log("Error sending parts:", error);
+        });
+    }
+    function afterResponce(data){
+        if(typeof data.error !== "undefined"){
+            return system.handelPyError(data.error);
+        }
+        document.querySelector('.preview').innerHTML = `<img src='../images/s2.png' alt='loading' id="dimg"/>`;
+        document.getElementById('op1').innerHTML = `
+            <div class="btn btn-process" onclick="route('');"><i class="fa fa-long-arrow-left"></i> Try some another</div>
+            <div class="btn btn-info" onclick="system.download_pdf('${data}','chs_${new Date().getTime()}.pdf');"><i class="fa fa-download"></i> Download</div>
+        `;
+        system.download_pdf(data, `chs_${new Date().getTime()}.pdf`);
+        document.getElementById('op2').style.display = 'none';
+        document.getElementById('op3').style.display = 'none';
+        document.querySelector('.placeholder').innerHTML = '';
+        document.getElementById('file-input').disabled = true;
+        document.querySelector('.progress-status').style.display = 'none';
+    }
+</script>
+</html>

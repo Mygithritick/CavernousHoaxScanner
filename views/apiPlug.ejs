@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Cavernous Hoax Scanner">
+    <meta property="og:image" content="../images/side-img.png" name="og:image">
+    <meta itemprop="image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="og:site_name" content="Cavernous Hoax Scanner">
+    <meta property="twitter:image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cavernous Hoax Scanner">
+    <meta content="Cavernous Hoax Scanner (CHS) is a cutting-edge deepfake image & video detection platform also feature image compresser, image converter, image to pdf to ensure AI-powered media processing." lang="en-us" name="description"/>
+    <meta content="Cavernous Hoax Scanner, Deepfake Detector, DFD, Image tool, deepfake, image editor, project, CNN, WHITE LOTUS" lang="en-us" name="keywords">
+    <meta name="google-site-verification" content="s30Z0opKABJMHsTOIT6f6iSoYSQel63Iln-BPe81Ov4" />
+    <title version="1.0">Cavernous Hoax Scanner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/App.css"/>
+    <link rel="stylesheet" href="../public/index.css"/>
+    <link rel="icon" href="../public/favicon.ico"/>
+</head>
+<style>
+    .api-container small{
+        text-align: justify;
+    }
+    #apikeyValidation{
+        margin-top: 10%;
+        text-align: center;
+    }
+</style>
+<body>
+    <header id="header">
+        <%= header %>
+    </header>
+    <section class="workspace" id="apiPlugPage">
+        <img src="../images/3d_donut.png" alt="chs" class="right-top-des"/>
+        <img src="../images/glow1.png" alt="chs" class="left-middle-des"/>
+        <img src="../images/3d_atom.png" alt="chs" class="right-middle-des"/>
+        <img src="../images/arrow_circle.png" alt="chs" class="left-bottom-des"/>
+        <div class="apiView">
+            <div class="api-left api-container">
+                <div class="flx head">
+                    <h3>create your CHS API:</h3>
+                    <div class="btn btn-outline-primary" onclick="route('/docs');"><i class="fa fa-book"></i> User Guide</div>
+                </div>
+                <hr/>
+                <div class="body">
+                    <form>
+                        <div class="form-group">
+                            <label for="apiname">API Name</label>
+                            <select class="form-control" id="apiname" aria-describedby="apiname" onchange="selectLang();">
+                                <option>Image Compressor</option>
+                                <option>Deepfake Detector</option>
+                                <option>Image to PDF</option>
+                                <option selected="true">Image Converter</option>
+                            </select>
+                            <small id="apiname" class="form-text text-muted">Choose your API route endpoint to ensure correct request routing. This selection guides interactions with the right AI service.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="apitype">API Type</label>
+                            <select class="form-control" id="apitype" aria-describedby="apitype" onchange="apitypeChange();">
+                                <option>Private</option>
+                                <option selected="true">Public</option>
+                            </select>
+                            <small id="apitype" class="form-text text-muted">Select the API type to determine access level and authorize usage amount. Proper selection ensures controlled and efficient request handling.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="apimethod">Method</label>
+                            <select class="form-control" id="apimethod" aria-describedby="apimethod" disabled="true">
+                                <option>GET</option>
+                                <option selected="true">POST</option>
+                            </select>
+                            <small id="apimethod" class="form-text text-muted">Define the request approach for API communication. This selection ensures proper data transmission, interaction accuracy, and seamless integration within workflows.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="apilevel">Level Data</label>
+                            <select class="form-control" id="apilevel" aria-describedby="apilevel" disabled="true">
+                                <option>Custom</option>
+                                <option selected="true">CHS</option>
+                            </select>
+                            <small id="apilevel" class="form-text text-muted">Choose the structured dataset used in processing and analysis. This selection ensures efficient integration within API agent workflows.</small>
+                        </div>
+                        <div class="form-group left">
+                            <label for="apioperation">Operations</label>
+                            <select class="form-control" id="apioperation" aria-describedby="apioperation">
+                                <option selected="true">Advanced</option>
+                                <option>Basic</option>
+                            </select>
+                            <small id="apioperation" class="form-text text-muted">Choose between Basic for standard API defining language, or Advanced for ES Module support and serverless activities. Optimize the complexity and time.</small>
+                        </div>
+                        <hr/>
+                        <div class="form-group left">
+                            <label for="apikey">API Key</label>
+                            <input type="password" class="form-control" id="apikey" aria-describedby="apikey" readonly onkeyup="system.validateApiKey('apikey', 'apikeyValidation');"/>
+                            <small id="apikey" class="form-text text-muted">Enter the unique authentication key for secure access. This ensures authorized usage and protects API interactions when selecting private access.</small>
+                        </div>
+                        <div class="form-group">
+                            <smal class="form-text" id="apikeyValidation"></smal>
+                        </div>
+                    </form>
+                </div>
+                <hr/>
+                <div class="flx head">
+                    <div class="btn btn-process" onclick="selectLang();">Generate API</div>
+                </div>
+            </div>
+            <div class="api-right api-container">
+                <div class="flx head">
+                    <h3>Code Snippets:</h3>
+                    <div class="btn btn-outline-primary" onclick="route('https:/\/chscdn.vercel.app/');"><i class="fa fa-code"></i> CHSCDN</div>
+                </div>
+                <hr/>
+                <div class="body">
+                    <small class="form-text text-muted">This code snippet is generated by CHS Agent to help configure API properties seamlessly. Use it in your project for efficient integration.</small>
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control" id="apilang" onchange="selectLang();">
+                                <option>React Js</option>
+                                <option>Node Js</option>
+                                <option selected="true">Vanilla Js</option>
+                                <option>Python</option>
+                            </select>
+                        </div>
+                        <div class="code-editor">
+                            <!-- <ul class="tabs codeheader_html">
+                                <li class="tab" title="File name with extension">./index.html</li>
+                                <li class="tabi"><span onclick="Copy('apiInSnipVanillaHtml');" title="Copy this code">📋</span><span onclick="Rview('apiInSnipVanillaHtml')" title="Raw view of this code" class="word">Raw</span>
+                                <span title="Feedback of this code" onclick="codeFeed();">👍</span><span onclick="downloadCode('apiInSnipVanillaHtml','index.html');" title="Download it in text file">📥</span></li>
+                            </ul> -->
+                            <div class="code-wrapper">
+                                <div class="line-numbers" id="apiInSnipVanillaHtml-line"></div>
+                                <pre class="code language-html" contenteditable="false" spellcheck="false" id="apiInSnipVanillaHtml">Please Refresh onces, some configuration package not loaded due to low band internet
+                                <div class="btn btn-copy">Copy</div>
+                                </pre>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr/>
+                <div class="flx head">
+                    <div class="btn btn-process"><i class="fa fa-bug"></i> Report Bug</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="customerFeed">
+        <%= feed %>
+    </div>
+    </section>
+    <aside id="faq-help" class="appear hide">
+        <%= faq %>
+    </aside>
+    <footer id="footer">
+        <%= footer %>
+    </footer>
+</body>
+<script src="../public/App.js"></script>
+<script src="../public/default.min.js"></script>
+<script>
+    pageSet.push('header', 'apiPlugPage', 'faq-help', 'footer');
+    appearSet.push(['#faq-help', 580]);
+    currentPage.push('api');
+    document.getElementById('header').innerHTML = document.getElementById('header').textContent;
+    document.getElementById('footer').innerHTML = document.getElementById('footer').textContent;
+    document.getElementById('faq-help').innerHTML = document.getElementById('faq-help').textContent;
+    document.getElementById('customerFeed').innerHTML = document.getElementById('customerFeed').textContent;
+    codeset('Image Converter', 'Vanilla Js');
+
+    function selectLang(){
+        let lang = document.getElementById('apilang').value;
+        let name = document.getElementById('apiname').value;
+        codeset(name, lang);
+    }
+
+    function apitypeChange(){
+        let type = document.getElementById('apitype').value;
+        let key = document.getElementById('apikey'); 
+        if(type=='Private'){
+            key.removeAttribute("readonly");
+        }else{
+            key.value = "";
+            key.setAttribute("readonly", true);
+        }
+    }
+    
+    function codeset(name, lang){
+        setTimeout(()=>{
+            let code = 0;
+            appointCode = eval(compiler.appointCode);
+            system.codeset(name, lang, 'apiInSnipVanillaHtml', 'POST', 'apikey');
+            updateLine = eval(compiler.updateLineNumbers);
+            ideDeploy = eval(compiler.ideDeploy);
+            ideDeploy('#apiInSnipVanillaHtml','#apiInSnipVanillaHtml-line', updateLine);
+        },1000);
+    }
+    document.querySelector('.code-editor').addEventListener('click', function (event){
+        if(event.target === this){
+            system.copyCode('#apiInSnipVanillaHtml');
+        }
+    });
+</script>
+</html>
